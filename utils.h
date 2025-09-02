@@ -5,21 +5,30 @@
 #include <vector>
 #include <stdexcept>
 
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define BOLD "\033[1m"
+#define RESET "\033[0m"
+
+
 
 void EXPECT_EQ_MSG_GENERIC(
     const bool verdict,
-    const std::string&,
-    const std::string&
-);
-void EXPECT_EQ(const std::string val1, const std::string val2);
+    const std::string &,
+    const std::string &);
+
+void EXPECT_EQ(const std::string &val1, const std::string &val2);
 
 template <typename T>
-std::string vector2string(std::vector<T> vec) {
+std::string vector2string(const std::vector<T> &vec)
+{
     std::string result = "{";
 
-    for (int i = 0; i < vec.size(); i++) {
+    for (int i = 0; i < vec.size(); i++)
+    {
         result += std::to_string(vec[i]);
-        if (i < vec.size() - 1) {
+        if (i < vec.size() - 1)
+        {
             result += ", ";
         }
     }
@@ -28,27 +37,26 @@ std::string vector2string(std::vector<T> vec) {
 }
 
 template <typename U>
-void EXPECT_EQ(const std::vector<U> val1, const std::vector<U> val2) {
+void EXPECT_EQ(const std::vector<U> &val1, const std::vector<U> &val2)
+{
     bool verdict = val1 == val2;
     EXPECT_EQ_MSG_GENERIC(
         verdict,
         vector2string(val1),
-        vector2string(val2)
-    );
+        vector2string(val2));
 }
 
 template <typename T>
-void EXPECT_EQ(const T val1, const T val2) {
+void EXPECT_EQ(const T &val1, const T &val2)
+{
     bool verdict = val1 == val2;
     EXPECT_EQ_MSG_GENERIC(
         verdict,
         std::to_string(val1),
-        std::to_string(val2)
-    );
+        std::to_string(val2));
 }
 
-
-void add_char_n_times(std::string& source, char ch, int n);
+void add_char_n_times(std::string &source, char ch, int n);
 void print_char_n(char, int);
 void print_line();
 
