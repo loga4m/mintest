@@ -29,7 +29,7 @@ void EXPECT_EQ_MSG_GENERIC(
     if (verdict) {
         std::cout << GREEN << BOLD << "PASS..." << RESET << std::endl;
     } else {
-        std::cout << RED << BOLDcls << "FAIL..." << RESET << std::endl;
+        std::cout << RED << BOLD << "FAIL..." << RESET << std::endl;
     }
 
     print_char_n(' ', 10);
