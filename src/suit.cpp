@@ -1,5 +1,5 @@
-#include "suit.h"
-#include "utils.h"
+#include "../include/suit.h"
+#include "../include/utils.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -16,12 +16,12 @@ void TestSuit::run_tests()
 void TestSuit::test_runner()
 {
     print_line();
-    std::cout << "RUNNING TESTS...\n";
+    std::cout << BOLD << GREEN << "RUNNING TESTS...\n" << RESET;
     print_char_n('\n', 1);
 
     for (auto &test : tests)
     {
-        std::cout << test.first << "...\n";
+        std::cout << BOLD << test.first << "...\n" << RESET;
         test.second();
     }
 }

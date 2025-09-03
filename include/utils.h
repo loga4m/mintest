@@ -1,0 +1,33 @@
+#ifndef UTILS_H
+#define UTILS_H
+#include <string>
+#include <vector>
+
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define BOLD "\033[1m"
+#define RESET "\033[0m"
+
+template <typename T>
+std::string vector2string(const std::vector<T> &vec)
+{
+    std::string result = "{";
+
+    for (int i = 0; i < vec.size(); i++)
+    {
+        result += std::to_string(vec[i]);
+        if (i < vec.size() - 1)
+        {
+            result += ", ";
+        }
+    }
+    result += "}";
+    return result;
+}
+
+
+void add_char_n_times(std::string &source, char ch, int n);
+void print_char_n(char, int);
+void print_line();
+
+#endif

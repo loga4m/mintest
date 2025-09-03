@@ -1,15 +1,9 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef EXPECT_EQ_H
+#define EXPECT_EQ_H
+#include "../utils.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include <stdexcept>
-
-#define RED "\033[31m"
-#define GREEN "\033[32m"
-#define BOLD "\033[1m"
-#define RESET "\033[0m"
-
 
 
 void EXPECT_EQ_MSG_GENERIC(
@@ -18,23 +12,6 @@ void EXPECT_EQ_MSG_GENERIC(
     const std::string &);
 
 void EXPECT_EQ(const std::string &val1, const std::string &val2);
-
-template <typename T>
-std::string vector2string(const std::vector<T> &vec)
-{
-    std::string result = "{";
-
-    for (int i = 0; i < vec.size(); i++)
-    {
-        result += std::to_string(vec[i]);
-        if (i < vec.size() - 1)
-        {
-            result += ", ";
-        }
-    }
-    result += "}";
-    return result;
-}
 
 template <typename U>
 void EXPECT_EQ(const std::vector<U> &val1, const std::vector<U> &val2)
@@ -55,9 +32,5 @@ void EXPECT_EQ(const T &val1, const T &val2)
         std::to_string(val1),
         std::to_string(val2));
 }
-
-void add_char_n_times(std::string &source, char ch, int n);
-void print_char_n(char, int);
-void print_line();
 
 #endif

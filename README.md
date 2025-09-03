@@ -3,11 +3,27 @@ Minimal testing framework for C++.
 
 |> Just runs tests, shows what values were given, and presents the verdict on the fly (with colors!).
 
-You can use to test your DSA implementations. Here is a **quick** example.
+You can use to test your DSA implementations. 
+
+### Installing (and uninstalling)
+```bash
+# requires sudo
+# install
+sudo bash install.sh
+# uninstall
+sudo bash uninstall.sh
+```
+
+### Quick example.
+
+```bash
+# compilation
+g++ <your_source_files> -lmintest -o <output_file>
+```
 
 ```cpp
-#include "suit.h"
-#include "utils.h"
+#include <mintest/suit.h>
+#include <mintest/assertions/headers.h> // headers.h includes assertion function
 #include <vector>
 #include <iostream>
 
