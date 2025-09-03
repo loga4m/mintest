@@ -6,3 +6,7 @@
   - support for primitive types (that are supported by to_string)
   - recreated `EXPECT_EQ` for specific template types by changing names
 - Run tests written by Claude.ai in `mintest` to test `mintest` 
+
+### Version Sep3.2025, 11:21 PM
+- Overloaded `std::to_string` for better handling
+- Support for Container<std::string>
