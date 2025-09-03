@@ -8,15 +8,15 @@
 #define BOLD "\033[1m"
 #define RESET "\033[0m"
 
-template <typename T>
-std::string vector2string(const std::vector<T> &vec)
+template <typename ContainerT>
+std::string container2string(const ContainerT &container)
 {
     std::string result = "{";
 
-    for (int i = 0; i < vec.size(); i++)
+    for (int i = 0; i < container.size(); i++)
     {
-        result += std::to_string(vec[i]);
-        if (i < vec.size() - 1)
+        result += std::to_string(container.at(i));
+        if (i < container.size() - 1)
         {
             result += ", ";
         }

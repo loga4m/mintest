@@ -11,16 +11,23 @@ void EXPECT_EQ_MSG_GENERIC(
     const std::string &,
     const std::string &);
 
-void EXPECT_EQ(const std::string &val1, const std::string &val2);
+void EXPECT_EQ_STR(const std::string &val1, const std::string &val2);
 
-template <typename U>
-void EXPECT_EQ(const std::vector<U> &val1, const std::vector<U> &val2)
+template <typename ContainerT>
+void EXPECT_EQ_CONTAINER(const ContainerT &val1, const ContainerT &val2)
 {
-    bool verdict = val1 == val2;
+    bool verdict = false;
+    if (val1.size() == val2.size()) {
+        for (size_t i = 0; i < val1.size(); i++) {
+            if (val1.at(i) != val2.at(i))
+                break;
+        }
+        verdict = true;
+    }
     EXPECT_EQ_MSG_GENERIC(
         verdict,
-        vector2string(val1),
-        vector2string(val2));
+        container2string(val1),
+        container2string(val2));
 }
 
 template <typename T>

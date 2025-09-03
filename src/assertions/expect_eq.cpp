@@ -3,7 +3,7 @@
 #include "../../include/utils.h"
 
 
-void EXPECT_EQ(const std::string &val1, const std::string &val2)
+void EXPECT_EQ_STR(const std::string &val1, const std::string &val2)
 {
     bool verdict = val1 == val2;
     EXPECT_EQ_MSG_GENERIC(verdict, val1, val2);

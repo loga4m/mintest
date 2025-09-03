@@ -1,6 +1,6 @@
-#include "../include/suit.h"
-#include "../include/utils.h"
-#include "../include/assertions/headers.h"
+#include <mintest/suit.h>
+#include <mintest/utils.h>
+#include <mintest/assertions/headers.h>
 #include <vector>
 #include <iostream>
 
@@ -8,13 +8,13 @@ void basic_vector_test()
 {
     std::vector<int> myVec = {1, 2, 3};
 
-    EXPECT_EQ(myVec, {1, 2, 3});
+    EXPECT_EQ_CONTAINER(myVec, {1, 2, 3});
     EXPECT_EQ(myVec.at(0), 3);
     EXPECT_EQ(myVec.at(2), -10);
 
     myVec.push_back(2);
 
-    EXPECT_EQ(myVec, {1, 2, 3, 2});
+    EXPECT_EQ_CONTAINER(myVec, {1, 2, 3, 2});
     EXPECT_EQ(myVec.front(), 1);
     EXPECT_EQ(myVec.back(), 2);
 }
@@ -23,7 +23,7 @@ void basic_string_test()
 {
     std::string myStr = "Hello world";
 
-    EXPECT_EQ(std::string(myStr + "yeah"), std::string("Hello world yeah"));
+    EXPECT_EQ_STR(std::string(myStr + "yeah"), std::string("Hello world yeah"));
     EXPECT_EQ(myStr[0], 'H');
 }
 

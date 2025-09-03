@@ -4,23 +4,6 @@
 #include <string>
 #include <vector>
 
-
-std::string vector2string(std::vector<std::string> vec)
-{
-    std::string result = "{";
-
-    for (int i = 0; i < vec.size(); i++)
-    {
-        result += vec[i];
-        if (i < vec.size() - 1)
-        {
-            result += ", ";
-        }
-    }
-    result += "}";
-    return result;
-}
-
 void add_char_n_times(std::string &source, char ch, int n)
 {
     for (int i = 0; i < n; i++)
