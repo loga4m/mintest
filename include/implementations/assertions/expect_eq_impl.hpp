@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream>
+#include "../../overloads/to_string.h"
 #include "../../assertions/expect_eq.h"
 
 template <typename T>
@@ -55,6 +55,6 @@ void EXPECT_EQ(const T &val1, const T &val2)
     bool verdict = val1 == val2;
     EXPECT_EQ_MSG_GENERIC(
         verdict,
-        std::to_string(val1),
-        std::to_string(val2));
+        mintest::to_string(val1),
+        mintest::to_string(val2));
 }

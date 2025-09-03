@@ -1,12 +1,10 @@
-/* Tests by Claude.ai */
+/* Tests by Claude.ai (and the author) */
 
 #include <mintest/suit.h>
 #include <mintest/utils.h>
 #include <mintest/assertions/headers.h>
 #include <vector>
 #include <array>
-#include <deque>
-#include <list>
 #include <string>
 #include <iostream>
 
@@ -38,6 +36,11 @@ void test_expect_eq_container()
     std::vector<int> vec1 = {1, 2, 3, 4, 5};
     std::vector<int> vec2 = {1, 2, 3, 4, 5};
     EXPECT_EQ_CONTAINER(vec1, vec2);
+
+
+    std::vector<std::string> vec_str1 = {"Hello"};
+    std::vector<std::string> vec_str2 = {"Hello"};
+    EXPECT_EQ_CONTAINER(vec_str1, vec_str2);
     
     // Different element types
     std::vector<double> vec_double1 = {1.1, 2.2, 3.3};
