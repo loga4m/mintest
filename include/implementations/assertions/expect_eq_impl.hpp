@@ -26,8 +26,8 @@ void EXPECT_EQ_ARRAY(const T &arr1, size_t arr1_size, const T &arr2, size_t arr2
         array2string(arr2, arr2_size));
 }
 
-template <typename ContainerT>
-void EXPECT_EQ_CONTAINER(const ContainerT &val1, const ContainerT &val2)
+template <typename ContainerT, typename ContainerU>
+void EXPECT_EQ_CONTAINER(const ContainerT &val1, const ContainerU &val2)
 {
     bool verdict = true;
 

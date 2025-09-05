@@ -15,8 +15,8 @@ void EXPECT_EQ_STR(const std::string &val1, const std::string &val2);
 template <typename T>
 void EXPECT_EQ_ARRAY(const T &arr1, size_t arr1_size, const T &arr2, size_t arr2_size);
 
-template <typename ContainerT>
-void EXPECT_EQ_CONTAINER(const ContainerT &val1, const ContainerT &val2);
+template <typename ContainerT, typename ContainerU>
+void EXPECT_EQ_CONTAINER(const ContainerT &val1, const ContainerU &val2);
 
 template <typename T>
 void EXPECT_EQ(const T &val1, const T &val2);
