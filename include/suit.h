@@ -15,6 +15,7 @@ public:
     TestSuit();
     void run_tests();
     void test_runner();
+    void print_summary();
     void add_test(std::string test_name, TestFunction fPtr);
     void reset();
 };
